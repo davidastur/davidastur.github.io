@@ -82,11 +82,12 @@
       color: inherit;
       transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
-    .project:hover {
+    a.project:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(70, 88, 58, 0.10);
       border-color: var(--olive-deep);
     }
+    .project.wip { cursor: default; }
     .project h3 {
       font-family: 'Fraunces', Georgia, serif;
       font-weight: 600;
@@ -98,12 +99,21 @@
       font-size: 0.95rem;
       margin-top: 4px;
     }
-    .project .more {
-      display: inline-block;
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       margin-top: 12px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      color: var(--olive-deep);
+      color: var(--terracotta);
+    }
+    .status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--terracotta);
     }
 
     .links {
@@ -161,18 +171,17 @@
 
     <section>
       <h2>Proyectos</h2>
-      <!-- Cambie el href por la URL del repo cuando sea público (o déjelo apuntando a su perfil). -->
-      <a class="project" href="https://github.com/davidastur">
+      <div class="project wip">
         <h3>Versario</h3>
         <p>Suite bíblica en Flutter (español): lectura, trivia y categorización
            de versículos, para comunidades cristianas hispanohablantes.</p>
-        <span class="more">Ver en GitHub&nbsp;→</span>
-      </a>
+        <span class="status">En construcción</span>
+      </div>
     </section>
 
     <nav class="links">
-      <a href="https://github.com/davidastur">GitHub</a>
-      <!-- Añada aquí más enlaces cuando los tenga: pub.dev, correo, etc. -->
+      <a href="mailto:davirichu@gmail.com">Contacto</a>
+      <!-- Añada aquí más enlaces cuando los tenga: GitHub, pub.dev, etc. -->
     </nav>
 
     <footer>
